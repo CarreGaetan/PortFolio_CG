@@ -3,7 +3,7 @@
 export default function Avatar() {
     return (
       <model-viewer
-        src="/modelDance.glb"
+        src={`${import.meta.env.BASE_URL}modelDance.glb`}
         alt="Mon avatar 3D"
         auto-rotate
         camera-controls

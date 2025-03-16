@@ -1,9 +1,7 @@
-// Avatar.jsx
-
 export default function Avatar() {
   return (
     <model-viewer
-      src="/model.glb"
+      src={`${import.meta.env.BASE_URL}model.glb`}
       alt="Mon avatar 3D"
       auto-rotate
       camera-controls
