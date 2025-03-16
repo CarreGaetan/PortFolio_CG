@@ -1,31 +1,35 @@
-import './index.scss'
 import { useState } from 'react';
+import './index.scss';
 import Avatar from './Avatar.jsx';
 import AvatarDance from './AvatarDance.jsx';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
-import AccordionUsage from './Accordion.jsx'
+import AccordionUsage from './Accordion.jsx';
 
 function About() {
-
-  const [selectedAvatar, setSelectedAvatar] = useState('cool')
-  // const [isOpen, setIsOpen] = useState(false)
-  // const [activeSection, setActiveSection] = useState(null)
-
-  // const toggleSection = (section) => {
-  //   setActiveSection(prev => (prev === section ? null : section))
-  // }
+  const [selectedAvatar, setSelectedAvatar] = useState('cool');
 
   return (
     <div className='about'>
       <div className="avatar-section">
-        {selectedAvatar === 'cool' && <Avatar />}
-        {selectedAvatar === 'dance' && <AvatarDance />}
+        <div className="avatar-wrapper">
+          {selectedAvatar === 'cool' && <Avatar />}
+          {selectedAvatar === 'dance' && <AvatarDance />}
+        </div>
         <div className="poses-buttons">
-          <button onClick={() => setSelectedAvatar('cool')}>Cool</button>
-          <button onClick={() => setSelectedAvatar('dance')}>Danse</button>
+          <button 
+            onClick={() => setSelectedAvatar('cool')}
+            className={selectedAvatar === 'cool' ? 'active' : ''}
+          >
+            Cool
+          </button>
+          <button 
+            onClick={() => setSelectedAvatar('dance')}
+            className={selectedAvatar === 'dance' ? 'active' : ''}
+          >
+            Danse
+          </button>
         </div>
       </div>
+      
       <div className='informations-section'>
         <AccordionUsage />
       </div>

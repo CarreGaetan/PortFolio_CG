@@ -9,3 +9,9 @@
         margin: 0;
     }
 }
+
+@media (max-width: 478px) {
+    .header {
+        padding: 10px 1.2rem;
+    }
+}

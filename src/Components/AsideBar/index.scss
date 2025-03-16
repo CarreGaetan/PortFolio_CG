@@ -14,3 +14,9 @@
         align-items: center;
     }
 }
+
+@media (max-width: 900px) {
+    .aside-bar {
+      display: none;
+    }
+  }

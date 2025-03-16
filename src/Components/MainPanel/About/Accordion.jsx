@@ -20,8 +20,7 @@ export default function AccordionUsage() {
   return (
     <div style={{
         width: '100%',
-        padding: '20px',
-        margin: '20px',
+        padding: '10px',
         boxSizing: 'border-box'
     }}>
       <Accordion 
@@ -45,7 +44,9 @@ export default function AccordionUsage() {
           <ul className='about-me-list' style={{
             listStyleType: 'none',
             padding: '0 0 0 20px',
-            fontFamily: 'JetBrains Mono, monospace'
+            fontFamily: 'JetBrains Mono, monospace',
+            display: 'flex',
+            flexDirection: 'column'
           }}>
             <li>👨 Gaëtan Carré</li>
             <li>🎂 30 ans</li>
@@ -119,7 +120,8 @@ export default function AccordionUsage() {
         <AccordionDetails sx={{
           textAlign: 'left',
           display: 'flex',
-          gap: '10px'
+          gap: '10px',
+          flexWrap: 'wrap'
         }}>
           <div className='tag-skill' style={{ border: '2px solid #FF7140', background: 'none' }}><p>HTML</p></div>
           <div className='tag-skill' style={{ border: '2px solid #4185C9', background: 'none' }}><p>CSS</p></div>

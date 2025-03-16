@@ -1,62 +1,187 @@
 .home {
+    min-height: calc(100vh - 300px);
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    gap: 20px;
     background-color: #24292E;
-    margin: 50px 100px;
-
-    & img {
-        border-radius: 10px;
+    
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
     }
-}
-
-.presentation {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    max-width: 500px;
-
-    & div {
-        text-align: left;
-    }
-
-    & h1 {
-        margin: 0;
-        padding: 0;
-        font-size: 3.5rem;
-        font-weight: 400;
-    }
-
-    & h2 {
-        margin: 0;
-        padding: 0;
-        font-weight: 400;
-    }
-
-    & p {
-        margin: 20px 0 0 0;
-        padding: 0;
-        text-align: start;
-    }
-
-    & .buttons {
-        display: flex;
-        gap: 10px;
-        margin: 40px 0 0 0;
+  
+    .presentation {
+      flex: 1;
+      color: #f0f6fc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      header, .intro-text, .action-buttons {
         width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      header {
+        margin-bottom: 1.5rem;
         
-        & button {
-            width: 30%;
-            padding: 10px 15px;
-            border-radius: 5px;
-            border: none;
-            font-size: 0.9rem;
-            background-color:  #0366d6;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            font-family: JetBrains Mono, monospace;
+        h1 {
+          margin: 0;
+          font-size: clamp(2.5rem, 5vw, 3.5rem);
+          font-weight: 500;
+          line-height: 1.2;
+          letter-spacing: -0.05em;
+          text-align: left;
         }
+  
+        h2 {
+          margin: 0.5rem 0 0;
+          font-size: clamp(1.5rem, 3vw, 2rem);
+          font-weight: 400;
+          color: #8b949e;
+          text-align: left;
+        }
+      }
+  
+      .intro-text {
+        font-size: clamp(1rem, 1.75vw, 1.1rem);
+        line-height: 1.6;
+        margin: 2rem auto;
+        text-align: left;
+      }
     }
-}
+  
+    .photo-container {
+      flex-shrink: 0;
+      
+      .profile-photo {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        min-width: 280px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+  
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+  
+      button {
+        padding: 0.8rem 1.8rem;
+        border-radius: 6px;
+        border: none;
+        font-size: 1rem;
+        background-color: #0366d6;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: 'JetBrains Mono', monospace;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+  
+        &:hover {
+          background-color: #0356b6;
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+  
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  
+    @media (max-width: 1024px) {
+      .content-wrapper {
+        gap: 4rem;
+        padding: 1rem;
+      }
+      
+      .presentation {
+        header, .intro-text, .action-buttons {
+          max-width: 500px;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      padding: 2rem 1rem 4rem;
+  
+      .content-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+        padding: 0;
+      }
+  
+      .presentation {
+        align-items: center;
+        text-align: center;
+  
+        header, .intro-text, .action-buttons {
+          max-width: 100%;
+          text-align: center;
+        }
+  
+        header {
+          h1, h2 {
+            text-align: center;
+          }
+        }
+  
+        .intro-text {
+          text-align: center;
+        }
+  
+        .action-buttons {
+          justify-content: center;
+        }
+      }
+  
+      .photo-container {
+        order: -1;
+        max-width: 300px;
+  
+        .profile-photo {
+          min-width: auto;
+        }
+      }
+  
+      .action-buttons button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .content-wrapper {
+        gap: 2rem;
+      }
+  
+      .presentation header h1 {
+        font-size: 2.2rem;
+      }
+  
+      .action-buttons {
+        margin-top: 2rem;
+        
+        button {
+          padding: 0.8rem 1.2rem;
+        }
+      }
+    }
+  }

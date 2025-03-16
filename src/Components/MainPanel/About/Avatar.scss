@@ -1,0 +1,34 @@
+.avatar-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; // Taille maximale sur grand écran
+  height: auto;
+  aspect-ratio: 2/3; // Maintient le ratio 400x600 (2:3)
+  margin: 0 auto;
+
+  model-viewer {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  // Responsive
+  @media (max-width: 1024px) {
+    max-width: 350px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+    aspect-ratio: 3/4;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+    min-height: 250px;
+  }
+}

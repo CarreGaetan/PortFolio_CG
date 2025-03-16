@@ -1,88 +1,99 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 2rem;
-    
-    // Partie de gauche : plus petite (flex: 1)
-    > div:first-child {
-      flex: 1;
-      padding: 1rem 2rem;
-      box-sizing: border-box;
-    }
-    
-    // Partie de droite : plus grande (flex: 2)
-    > div:last-child {
-      flex: 2;
-      padding: 1rem 0;
-      box-sizing: border-box;
-    }
-  
-    h1 {
-      text-align: left;
-      margin: 0;
-      font-size: 24px;
-      margin: 10px 0 20px 0;
-      box-sizing: border-box;
-    }
-    
-    ol {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      justify-content: center;
-      padding: 0 2rem;
-    
-      li {
-        padding: 0 0 0 30px;
-        gap: 10px;
-        font-weight: 400;
-        font-size: 18px;
-        align-items: center;
-      }
-    }
-    
-    .email-container, .name-container,
-    .message-container {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      width: 100%;
-    
-      label {
-        font-size: 18px;
-      }
-    
-      input,
-      textarea {
-        padding: 5px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 15px;
-      }
-    }
-    
-    button {
-      background-color: #0366d6;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-  
-    // On limite la largeur du contenu de la partie de droite
-    .content {
-      width: 70%;
-      margin: 0 auto;
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
   }
-  
+
+  // Partie gauche
+  > div:first-child {
+      font-family: 'JetBrains Mono', monospace;
+      padding: 1rem;
+      border-right: 2px solid #1F2428;
+
+      @media (max-width: 768px) {
+          border-right: none;
+          border-bottom: 2px solid #1F2428;
+          padding-bottom: 2rem;
+      }
+
+      ol {
+          list-style: none;
+          counter-reset: line-counter;
+          margin: 0;
+          box-sizing: border-box;
+          
+          li {
+              counter-increment: line-counter;
+              padding-left: 2em;
+              margin-bottom: 0.8rem;
+              font-size: clamp(0.9rem, 1.5vw, 1rem);
+              color: #8b949e;
+              line-height: 1.4;
+
+              // &::before {
+              //     content: counter(line-counter) ". ";
+              //     position: absolute;
+              //     left: 0;
+              //     color: #F9774E;
+              // }
+
+              span {
+                  color: #F9774E !important;
+                  word-break: break-word;
+              }
+          }
+      }
+  }
+
+  // Partie droite
   .contact-form {
-    border-left: 2px solid rgb(31, 36, 40);
+      padding: 1rem;
+
+      .content {
+          max-width: 600px;
+          margin: 0 auto;
+
+          h5 {
+              font-size: clamp(1.2rem, 2vw, 1.5rem) !important;
+              margin-bottom: 1.5rem !important;
+          }
+      }
+
+      form {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .MuiBox-root {
+              flex-direction: column !important;
+              gap: 1rem !important;
+          }
+
+          .MuiTextField-root {
+              width: 100% !important;
+
+              .MuiInputBase-root {
+                  font-size: clamp(0.9rem, 1.5vw, 1rem) !important;
+              }
+          }
+
+          button {
+              width: fit-content;
+              padding: 0.8rem 2rem !important;
+              font-size: clamp(0.9rem, 1.5vw, 1rem) !important;
+
+              @media (max-width: 480px) {
+                  width: 100%;
+              }
+          }
+      }
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
+}
