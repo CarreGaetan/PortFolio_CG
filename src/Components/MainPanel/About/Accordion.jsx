@@ -133,8 +133,8 @@ export default function AccordionUsage() {
         </AccordionDetails>
         <AccordionActions>
           <Button onClick={() => window.location.href = 'https://github.com/CarreGaetan'}>Github</Button>
-          <a href="/carre_gaetan_cv.pdf" download={'Cv Gaëtan Carré'}>
-            <Button>Mon CV</Button>
+          <a href={`${import.meta.env.BASE_URL}carre_gaetan_cv.pdf`} download="Cv_Gaëtan_Carré.pdf">
+          <Button>Mon CV</Button>
           </a>
         </AccordionActions>
       </Accordion>
