@@ -1,0 +1,64 @@
+.about {
+    display: flex;
+    gap: 100px;
+    margin: 20px;
+}
+
+.poses-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    & button {
+        width: 25%;
+        padding: 7px 10px;
+        border-radius: 5px;
+        border: 2px solid RGB(3, 102, 214);
+        font-size: 0.9rem;
+        background-color: RGB(3, 102, 214);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-family: "JetBrains Mono", monospace;
+    }
+}
+
+.informations-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    .tag-skill {
+        background-color: #21A3F1;
+        border-radius: 5px;
+        padding: 5px 10px;
+
+        p {
+            margin: 0;
+            font-weight: 400;
+            font-size: 14px;
+        }
+    }
+
+    .about-me-list {
+        display: flex;
+        gap: 2px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+            li {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                margin: 0;
+                font-size: 14px;
+                // font-weight: 300;
+            }
+        }
+    }
+}

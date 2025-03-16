@@ -1,0 +1,16 @@
+.aside-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 4.5vw;
+    padding: 20px 0;
+    height: calc(100vh - 50px - 50px); // ??? A expliquer / comprendre
+    background-color: #24292E;
+
+    & .logos-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+}

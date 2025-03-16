@@ -1,0 +1,15 @@
+#root {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  background-color: #24292E;
+  font-family: JetBrains Mono, monospace;
+}
+
+.mainLayout {
+  display: flex;
+}

@@ -1,0 +1,35 @@
+.main-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & .tabs-bar {
+        display: flex;
+        background-color: #1F2428;
+
+        & div {
+            padding: 5px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid rgb(46, 46, 46);
+            border-top: 0;
+
+            & p {
+                margin: 0;
+                font-size: 0.9rem;
+                font-weight: 300;
+            }
+
+            & :hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.tab.active {
+    border-bottom: 2px solid #0366d6 !important;  // Par exemple, un bleu pour marquer l'onglet sélectionné
+    color: #fff;
+  }
